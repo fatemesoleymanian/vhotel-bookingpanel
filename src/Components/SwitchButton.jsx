@@ -6,7 +6,7 @@ const SwitchButton = ({ view, handleSwitch }) => {
       onClick={handleSwitch}
       className="w-full p-4 bg-blue-500 text-white fixed bottom-0"
     >
-      {view === 'list' ? 'Switch to Map View' : 'Switch to List View'}
+      {view === 'list' ? 'نقشه' : 'لیست'}
     </button>
   );
 };
