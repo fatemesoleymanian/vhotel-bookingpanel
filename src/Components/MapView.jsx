@@ -5,6 +5,7 @@ import NeshanMap from "@neshan-maps-platform/react-openlayers"
 const MapView = ({ className }) => {
   const [ol, setOl] = useState()
   const [olMap, setOlMap] = useState()
+  const neshanKey = import.meta.env.VITE_NESHAN_KEY
 
   const onInit = (ol, map) => {
     setOl(ol)
@@ -24,7 +25,7 @@ const MapView = ({ className }) => {
   return (
     <div className={`p-4 bg-gray-200 text-center h-full${className}`}>
       <NeshanMap
-        mapKey="web.b7773cdedd5943a9b47261dee9458cda"
+        mapKey={neshanKey}
         defaultType="neshan"
         center={{ latitude: 35.7665394, longitude: 51.4749824 }}
         style={{ height: "100%", width: "100%" }}
