@@ -4,7 +4,7 @@ const SearchBar = () => {
     <div className="p-4 bg-white shadow-md">
       <input 
         type="text"
-        placeholder="جستجو..." 
+        placeholder="جستجوی هتل یا شهر..." 
         className="w-full p-2 border border-gray-300 rounded-md" 
       />
     </div>
