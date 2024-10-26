@@ -111,7 +111,7 @@ const MapView = ({ className }) => {
         mapKey={neshanKey}
         defaultType="neshan"
         center={{ latitude: 35.7665394, longitude: 51.4749824 }}
-        style={{ height: "100%", width: "100%" }}
+        style={{ width: "100%" }}
         onInit={onInit}
         zoom={12}
       ></NeshanMap>

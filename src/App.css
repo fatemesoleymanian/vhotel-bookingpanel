@@ -1,3 +1,66 @@
-*{
+@font-face {
+    font-family: iran_sans_thin;
+    src: url(../src/assets/fonts/IRANSansXFaNum-Thin.ttf);
+  }
+  
+  * {
+    font-family: iran_sans_medium;
+    src: url(../src/assets/fonts/IRANSansXFaNum-Medium.ttf);
     direction: rtl;
-}
+
+  }
+  
+  @font-face {
+      font-family: iran_sans_ultra_light;
+      src: url(../src/assets/fonts/IRANSansXFaNum-UltraLight.ttf);
+  }
+  @font-face {
+    font-family: iran_sans_en_num_light;
+    src: url(../src/assets/fonts/IRANSansX-Light.ttf);
+  }
+  @font-face {
+      font-family: iran_sans_light;
+      src: url(../src/assets/fonts/IRANSansXFaNum-Light.ttf);
+  }
+  .font-vazir-fd {
+    font-family: 'iran_sans_medium';
+  }
+  
+  @font-face {
+      font-family: iran_sans_regular;
+      src: url(../src/assets/fonts/IRANSansXFaNum-Regular.ttf);
+  }
+  
+  @font-face {
+      font-family: iran_sans_medium;
+      src: url(../src/assets/fonts/IRANSansXFaNum-Medium.ttf);
+  }
+  
+  @font-face {
+      font-family: iran_sans_demi_bold;
+      src: url(../src/assets/fonts/IRANSansXFaNum-DemiBold.ttf);
+  }
+  
+  @font-face {
+      font-family: iran_sans_bold;
+      src: url(../src/assets/fonts/IRANSansXFaNum-Bold.ttf);
+  }
+  
+  @font-face {
+      font-family: iran_sans_extra_bold;
+      src: url(../src/assets/fonts/IRANSansXFaNum-ExtraBold.ttf);
+  }
+  
+  @font-face {
+      font-family: iran_sans_black;
+      src: url(../src/assets/fonts/IRANSansXFaNum-Black.ttf);
+  }
+  @font-face {
+    font-family: iran_sans_en_num_bold;
+    src: url(../src/assets/fonts/IRANSansX-Bold.ttf);
+  }
+  @font-face {
+    font-family: iran_sans_en_num_regular;
+    src: url(../src/assets/fonts/IRANSansX-Regular.ttf);
+  }
+
