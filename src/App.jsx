@@ -7,6 +7,7 @@ import Account from './Pages/Account'
 import Reserves from "./Pages/Reserves";
 import MainLayout from './Layout/MainLayout'
 import Policy from "./Pages/Policy";
+import HotelRooms from './Pages/HotelRooms'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='account' element={<Account />} />
         <Route path='reserves' element={<Reserves />} />
         <Route path='policy' element={<Policy />} />
+        <Route path='book/hotel/:_id' element={<HotelRooms />} />
       </Route>
 
     </Routes>

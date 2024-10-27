@@ -1,14 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { TokenContext } from '../Context/TokenContext';
 import Logo from '../../public/logo.png'
 import { FaUserCircle } from 'react-icons/fa';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
+import CustomModal from '../Components/CustomModal';
+import LoginForm from '../Components/LoginForm';
 
 
 const Header = () => {
-    const {token , removeToken ,saveToken} = useContext(TokenContext)
-
+    const {token , removeToken} = useContext(TokenContext)
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
   return (
+    <>
     <header className="bg-purple shadow-md">
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-2 py-4 flex justify-between items-center">
                 {/* Logo */}
@@ -45,11 +50,16 @@ const Header = () => {
                         </PopoverPanel>
                       </Popover> 
                     ) : (
-                        <a href="#" className="text-gray-700 hover:text-violet-500 pr-2 antialiased ">ورود / ثبت نام</a>
+                        <a href="#" className="text-gray-700 hover:text-violet-500 pr-2 antialiased "
+                        onClick={openModal}>ورود / ثبت نام</a>
                     )}
                 </div>
             </div>
         </header>
+        <CustomModal isOpen={isModalOpen} onClose={closeModal} title="" footer={[]}>
+        <LoginForm />
+      </CustomModal>
+        </>
   );
 };
 

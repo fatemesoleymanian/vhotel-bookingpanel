@@ -3,21 +3,21 @@ import "@neshan-maps-platform/react-openlayers/dist/style.css";
 import NeshanMap from "@neshan-maps-platform/react-openlayers";
 import HotelInfoCard from './HotelInfoCard';
 
-const MapView = ({ className }) => {
+const MapView = ({ className, hotels }) => {
   const [ol, setOl] = useState(null);
   const [olMap, setOlMap] = useState(null);
   const [instanceModel, setInstanceModel] = useState(null)
   const neshanKey = import.meta.env.VITE_NESHAN_KEY;
 
   const markers = [
-    { coords: [51.36281969540723, 35.69672648316882], price: '$120', name: 'استقلال' , image:'https://www.eghamat24.com/app/public/new_images/600x460/Tehran-ParsianEsteghlal-65.webp' },
-    { coords: [51.40081969540723, 35.70672648316882], price: '$150', name: 'اسپیناس' , image:'https://espinashotels.com/wp-content/uploads/2024/02/espinas_palace_about_bg-1.png' },
-    { coords: [51.35081969540723, 35.68672648316882], price: '$100', name: 'المپیک' , image:'https://sarmaafarin.com/wp-content/uploads/2018/12/olympic-hotel.jpg' }
-  ];
+    { coords: [51.36281969540723, 35.69672648316882], price: '$120', name: 'استقلال' , image:'https://www.eghamat24.com/app/public/new_images/600x460/Tehran-ParsianEsteghlal-65.webp',id:'esteghlal' },
+    { coords: [51.40081969540723, 35.70672648316882], price: '$150', name: 'اسپیناس' , image:'https://espinashotels.com/wp-content/uploads/2024/02/espinas_palace_about_bg-1.png',id:'espinas' },
+    { coords: [51.35081969540723, 35.68672648316882], price: '$100', name: 'المپیک' , image:'https://sarmaafarin.com/wp-content/uploads/2018/12/olympic-hotel.jpg',id:'olymoics' }
+  ]
 
   // Add marker function
   const addMarker = (ol, map, markerData) => {
-    const { coords, price , name , image } = markerData;
+    const { coords, price , name , image, id } = markerData;
 
     // Create a marker layer
     const markerLayer = new ol.layer.Vector({
@@ -30,7 +30,8 @@ const MapView = ({ className }) => {
       geometry: new ol.geom.Point(ol.proj.fromLonLat(coords)),
       price: price, // Store the price in the feature,
       name: name ,
-      image: image
+      image: image,
+      id: id
     });
 
     // Define the marker style with dynamic price
@@ -62,7 +63,8 @@ const MapView = ({ className }) => {
         setInstanceModel({
           name: feature.get('name'),
           image: feature.get('image'),
-          price: feature.get('price')
+          price: feature.get('price'),
+          id: feature.get('id')
         })
       }
     } else {
@@ -116,7 +118,7 @@ const MapView = ({ className }) => {
         zoom={12}
       ></NeshanMap>
       {instanceModel && (
-      <HotelInfoCard name={instanceModel.name} price={instanceModel.price} image={instanceModel.image}/>
+      <HotelInfoCard name={instanceModel.name} price={instanceModel.price} image={instanceModel.image} id={instanceModel.id}/>
       )}
     </div>
   );

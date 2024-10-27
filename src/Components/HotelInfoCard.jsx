@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-const HotelInfoCard = ({ image, name, price }) => {
-    const onSeeMore = (url) => {
-        console.log(url)
+const HotelInfoCard = ({ image, name, price,id }) => {
+    const onSeeMore = () => {
+        location.href = `book/hotel/${id}`
     }
   return (
     <div className="
@@ -50,7 +50,7 @@ const HotelInfoCard = ({ image, name, price }) => {
           duration-300
         "
       >
-        See More
+        مشاهده بیشتر
       </button>
     </div>
   );
